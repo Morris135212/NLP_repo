@@ -25,3 +25,9 @@ class MLMDataset(object):
 
         self.file_path = file_path
         self.block_size = block_size
+
+    def __call__(self, *args, **kwargs):
+        return LineByLineTextDataset(tokenizer=self.tokenizer,
+                                     file_path=self.file_path,
+                                     block_size=self.block_size)
+    
