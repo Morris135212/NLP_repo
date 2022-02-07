@@ -1,5 +1,9 @@
 from transformers import AutoTokenizer
 
 
-def get_tokenizer(pretrained="bert-base-uncased"):
-    return AutoTokenizer.from_pretrained(pretrained)
+class BaseTokenizer(object):
+    def __init__(self, pretrain="bert-base-uncased"):
+        self.pretrain = pretrain
+
+    def get_tokenizer(self):
+        return AutoTokenizer.from_pretrained(self.pretrain)
