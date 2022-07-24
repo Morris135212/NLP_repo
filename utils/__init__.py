@@ -7,6 +7,7 @@ class model_map(Enum):
     https://huggingface.co/models
     """
     bert = "bert-base-uncased"
+    bert_chinese = "bert-base-chinese"
     bigbird = "google/bigbird-roberta-base"
 
 

@@ -15,4 +15,5 @@ class BaseMLM(BaseTokenizer):
         self.pretrain = pretrain
 
     def __call__(self, *args, **kwargs):
-        return BertForMaskedLM(self.config).from_pretrained(self.pretrain)
+        model = BertForMaskedLM(self.config)
+        return model.from_pretrained(self.pretrain) if self.pretrain else model
